@@ -30,3 +30,7 @@
   - to mark every text it should enclosed with <ReactMarkDown>
   - saved as a .md file
   - to map an image the .md file should be same as the image folder name
+
+  ### gray- matter package
+
+  - used this package for reading a markdown file and split that into meta data and actual markdown content
