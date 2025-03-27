@@ -2,16 +2,18 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-const postDirectory = path.join(process.cwd(), "contents", "posts");
-console.log(postDirectory);
+const postDirectory = path.join(process.cwd(), "contents/posts");
+
+function getAllPostFiles() {
+  return fs.readdirSync(postDirectory);
+}
 
 export function getPostData(postFile) {
-  const filePath = path.join(postDirectory, postFile);
-  console.log(filePath);
-  const fileContent = fs.readdirSync(filePath, "utf-8"); // utf-8 added to handle unicode data
-  const { data, content } = matter(fileContent); //data is metadata, content is the actual content from .md file
   const postSlug = postFile.replace(/\.md$/, ""); // remove file extension
-  console.log(postSlug);
+  const filePath = path.join(postDirectory, `${postSlug}.md`);
+  const fileContent = fs.readFileSync(filePath, "utf-8"); // utf-8 added to handle unicode data
+  const { data, content } = matter(fileContent); //data is metadata, content is the actual content from .md file, both key-words are predefined
+
   const postData = {
     slug: postSlug,
     ...data,
@@ -20,8 +22,8 @@ export function getPostData(postFile) {
   return postData;
 }
 
-function getAllPosts() {
-  const postFiles = fs.readdirSync(postDirectory);
+export function getAllPosts() {
+  const postFiles = getAllPostFiles();
   const allPosts = postFiles.map((postFile) => {
     return getPostData(postFile);
   });
