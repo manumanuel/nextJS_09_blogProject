@@ -10,7 +10,7 @@ function PostItem(props) {
     month: "long",
     year: "numeric",
   });
-  const imagePath = `/images/posts/${image}`;
+  const imagePath = `/images/posts/${slug}/${image}`;
   const linkPath = `/posts/${slug}`;
 
   return (
@@ -24,7 +24,6 @@ function PostItem(props) {
             alt={title}
             width={300}
             height={200}
-            layout="responsive"
           />{" "}
         </div>
         <div className={classes.content}>

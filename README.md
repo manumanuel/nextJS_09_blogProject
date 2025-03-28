@@ -24,6 +24,8 @@
 
   - eg: <Link href="/"> <a> <Logo /> </a> </Link>
 
+  - layout with functionality of fill, responsive etc also deprecated within the <Image> tag
+
   ### to add markdown file install react-markdown
 
   - npm install react-markdown
@@ -34,3 +36,14 @@
   ### gray- matter package
 
   - used this package for reading a markdown file and split that into meta data and actual markdown content
+  - for accessing the image, image folder name should be same as markdown file name.
+
+  ### getStaticPaths
+
+  - In Next.js, getStaticPaths is used in conjunction with getStaticProps for dynamic routes to specify which paths should be pre-rendered at build time.
+  - Using getStaticPaths, we return an object containing a paths-array that specifies all the possible dynamic routes that should be statically generated.
+  - fallback property can have 3 types
+
+  1. false - if page is not returned by getStaticPaths, a 404 page will show
+  2. true - if page is not pre-generated on build time, nextJs will render it on demand the first time it's requested.
+  3. blocking - the page will wait until the data is fetched and the page is built before showing content to the user

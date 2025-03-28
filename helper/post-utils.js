@@ -4,7 +4,7 @@ import matter from "gray-matter";
 
 const postDirectory = path.join(process.cwd(), "contents/posts");
 
-function getAllPostFiles() {
+export function getAllPostFiles() {
   return fs.readdirSync(postDirectory);
 }
 
