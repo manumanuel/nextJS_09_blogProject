@@ -47,3 +47,11 @@
   1. false - if page is not returned by getStaticPaths, a 404 page will show
   2. true - if page is not pre-generated on build time, nextJs will render it on demand the first time it's requested.
   3. blocking - the page will wait until the data is fetched and the page is built before showing content to the user
+
+  ### renderers in markdown
+
+       In markdown, renderers refers to the process or tools that convert markdown content into HTML or other formats. [ Markdown is a lightweight markup language designed to be easy to write and read and it relies on 'renderers' to transform the plain text Markdown into a formatted output-usually Html]
+
+       In this project <img> tag is replaced with <Image> in react using 'components'
+       * To present a block of code in component we can use package 'react-syntax-highlighter'
+       - using this we can render code snippets with language specification and can choose various themes to present the code
