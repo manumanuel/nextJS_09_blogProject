@@ -55,3 +55,31 @@
        In this project <img> tag is replaced with <Image> in react using 'components'
        * To present a block of code in component we can use package 'react-syntax-highlighter'
        - using this we can render code snippets with language specification and can choose various themes to present the code
+
+  ### metadata implementation using Head
+
+  - import Head from 'next/head'
+  - then add contents as shown below,
+      <Head> 
+      <title>{}</title> 
+      <meta name="" content="">
+      </Head>
+    Here title, name, content details can be hard-coded or can add dynamically
+
+- loading page can be configured as shown below,
+   <Head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   </Head>
+
+### use of \_document.js
+
+- In nextJs, \_document.js file is a special file that allows us to customize the HTML document structure [ie we can define the format of html with attributes if required]. It's used to modify the default document structure that is generated for every page in the next.js app.
+- its added as a class based component
+
+### Portals usage with \_document.js
+
+- Its a feature of React
+- Portals provide a way to render children into a DOM node that exist outside the DOM hierarchy of the parent component.
+- This can be useful when need to render a component outside its usual position in the component tree but still maintains its functionality and behavior
+- eg: Modals, tooltips, notifications, dropdowns
+- implemented using ReactDOM.createPortal

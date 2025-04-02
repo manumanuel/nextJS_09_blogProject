@@ -1,8 +1,18 @@
+import Head from "next/head";
 import PostContent from "../../components/posts/post-detail/post-content";
 import { getPostData, getAllPostFiles } from "../../helper/post-utils";
+import { Fragment } from "react";
 
 function PostDetailPage(props) {
-  return <PostContent postData={props.postDetails} />;
+  return (
+    <Fragment>
+      <Head>
+        <title>{props.postDetails.title}</title>
+        <meta name="description" content={props.postDetails.excerpt} />
+      </Head>
+      <PostContent postData={props.postDetails} />
+    </Fragment>
+  );
 }
 
 export function getStaticProps(context) {
