@@ -83,3 +83,41 @@
 - This can be useful when need to render a component outside its usual position in the component tree but still maintains its functionality and behavior
 - eg: Modals, tooltips, notifications, dropdowns
 - implemented using ReactDOM.createPortal
+
+## nextJS Deployment options
+
+1. Standard Build
+2. Full Static Build
+
+### standard build
+
+- command -> next build
+- Produces optimized production bundles and a server-side app; requires nodejs server
+- Pages are pre-rendered(if possible) but nodeJs server requires for API routes, server side pages and page re-validations
+
+### full static build
+
+- command -> next export [add in package.json, if not there]
+- produces 100% static app; no nodeJS server required
+- doesn't work if the app has API routes, server-side pages or use page re-validations
+
+## Deployment steps & considerations
+
+1. Add page meta-data, optimize code, remove unnecessary dependencies
+2. Use environment variables for variable data
+   eg: db credentials, API keys...
+3. Do a test build and test the production ready app locally or some test server
+4. Deploy
+
+### next.config.js
+
+- add in the root folder of react application
+- it provide a flexible & powerful way to configure various aspects of application, from routing & image optimizations to environment variables and webpack configurations
+- use cases
+
+1. Environment variables
+2. Custom webpack configurations
+3. Server-side rendering (SSR) settings
+4. Redirects, rewrites and headers
+5. image optimization settings
+6. internationalization(i18n) settings
