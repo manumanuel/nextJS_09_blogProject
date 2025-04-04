@@ -2,9 +2,17 @@ import ReactMarkDown from "react-markdown";
 import PostHeader from "./post-header";
 import classes from "./post-content.module.css";
 import Image from "next/image";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 // import { solarizedLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import a11yDark from "react-syntax-highlighter/dist/cjs/styles/prism/a11y-dark";
+
+import javascript from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
+import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
+import html from "react-syntax-highlighter/dist/cjs/languages/prism/markup";
+
+SyntaxHighlighter.registerLanguage("js", javascript); //js is the name defined in .md file
+SyntaxHighlighter.registerLanguage("css", css);
+SyntaxHighlighter.registerLanguage("html", html);
 
 function PostContent(props) {
   const { postData } = props;

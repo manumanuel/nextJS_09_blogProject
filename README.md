@@ -121,3 +121,9 @@
 4. Redirects, rewrites and headers
 5. image optimization settings
 6. internationalization(i18n) settings
+
+## Host nextJS in a node server
+
+1. ship the whole project to the node supporting web server
+2. npm install [to use the supporting packages]
+3. npm start [to deploy the app on a url]
