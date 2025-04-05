@@ -127,3 +127,18 @@
 1. ship the whole project to the node supporting web server
 2. npm install [to use the supporting packages]
 3. npm start [to deploy the app on a url]
+
+## Vercel deployment
+
+1. create a github connected account [free use]
+2. try to add project from github [from main branch]
+3. deploy
+
+## next export
+
+- In next js, next export command is used to export our next js app as static site. This means that next js app is pre-rendered to static html files, and any dynamic features (like API routes, SSR) will be removed.
+- consider to add next.config.js file which is configured to support static export.
+  eg: module.exports = {
+  // Enable static export
+  target: 'serverless', // Optional but recommended
+  }
